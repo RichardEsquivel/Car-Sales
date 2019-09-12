@@ -20,7 +20,7 @@ const App = (props) => {
 		<div className="boxes">
 			<div className="box">
 				<Header car={state.car} />
-				<AddedFeatures car={state.car} />
+				<AddedFeatures car={state.car} removeFeature={removeFeature} />
 			</div>
 			<div className="box">
 				<AdditionalFeatures store={state.store} buyItem={buyItem} />

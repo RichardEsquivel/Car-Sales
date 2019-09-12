@@ -2,10 +2,10 @@
 
 //These will returning objects that will be used as the action the payload receive will be the feature object from store: [ {id: etc.}]. Will also export these action creators
 
-export const removeFeature = item => {
+export const removeFeature = feature => {
 	return {
 		type: "REMOVE_FEATURE",
-		payload: item
+		payload: feature
 	};
 };
 

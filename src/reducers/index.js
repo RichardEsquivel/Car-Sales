@@ -33,6 +33,15 @@ const reducer = (state = initialState, action) => {
 					}
 				}
 			}
+		case "REMOVE_FEATURE":
+			return {
+				...state,
+				car: {
+					...state.car,
+					features: state.car.features.filter(feature => (
+						feature.id !== action.payload.id))
+				}
+			}
 		default:
 			return state;
 	}
