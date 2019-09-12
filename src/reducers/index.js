@@ -20,6 +20,19 @@ const initialState = {
 const reducer = (state = initialState, action) => {
 	console.log('things going on', action);
 	switch (action.type) {
+		case "BUY_FEATURE":
+			//if then find shows that features.id is equivalent to to the payload(the feature is already added to the car) then it will not alter but just return current state and not add that feature from the onClick dispatch
+			if (state.car.features.find(item => item.id === action.payload.id)) {
+				return state;
+			} else {
+				return {
+					//state is an object that we want to modify one key out of, we want to take one of the feature objects out of store: [] and place it into car { features:[]} if we spread out state and then spread out new car object and then modify features array and then pass in the payload from dispatch
+					...state,
+					car: {
+						...state.car, features: [...state.car.features, action.payload]
+					}
+				}
+			}
 		default:
 			return state;
 	}
