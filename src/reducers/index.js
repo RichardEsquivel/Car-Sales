@@ -29,7 +29,9 @@ const reducer = (state = initialState, action) => {
 					//state is an object that we want to modify one key out of, we want to take one of the feature objects out of store: [] and place it into car { features:[]} if we spread out state and then spread out new car object and then modify features array and then pass in the payload from dispatch
 					...state,
 					car: {
-						...state.car, features: [...state.car.features, action.payload]
+						...state.car,
+						price: state.car.price + action.payload.price,
+						features: [...state.car.features, action.payload]
 					}
 				}
 			}

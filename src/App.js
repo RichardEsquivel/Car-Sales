@@ -32,7 +32,7 @@ const App = (props) => {
 
 //will curry connect have function App which we want to connect and the first will be two arguments mStp which will receive state from redux and returns an object which will given to the component as props, the second will be an object full of all of the functions that will be passed as props to the app
 
-//this will return an object to be used as props for App
+//this will return an object to be used as props for App the entire app needs state and we can access
 const mapStateToProps = (state) => {
 	return {
 		state: state
